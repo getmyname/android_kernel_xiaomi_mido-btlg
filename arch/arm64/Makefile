@@ -54,6 +54,10 @@ KBUILD_AFLAGS	+= $(call cc-option,-mabi=lp64)
 KBUILD_CFLAGS	+= $(call cc-option, -mcpu=cortex-a53+crypto+crc)
 KBUILD_CFLAGS	+= $(call cc-option, -mtune=cortex-a53)
 
+# Cortex-A53 flags
+KBUILD_CFLAGS	+= $(call cc-option, -mcpu=cortex-a53+crypto+crc)
+KBUILD_CFLAGS	+= $(call cc-option, -mtune=cortex-a53)
+
 ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
 KBUILD_CPPFLAGS	+= -mbig-endian
 AS		+= -EB
