@@ -623,12 +623,15 @@ else
 KBUILD_CFLAGS	+= -O3 -ffast-math -funsafe-math-optimizations -march=armv8-a -mtune=cortex-a53 -mcpu=cortex-a53 -floop-nest-optimize -fgraphite-identity -ftree-loop-distribution
 endif
 
-
 # Kill array bound warnings
 KBUILD_CFLAGS	+= $(call cc-disable-warning,array-bounds,)
 
 # Kill misleading indention errors
 KBUILD_CFLAGS   += -Wno-misleading-indentation
+
+ifdef CONFIG_CC_WERROR
+KBUILD_CFLAGS	+= -Werror
+endif
 
 # Tell gcc to never replace conditional load with a non-conditional one
 KBUILD_CFLAGS	+= $(call cc-option,--param=allow-store-data-races=0)
