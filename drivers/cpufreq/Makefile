@@ -21,6 +21,7 @@ cpu_boost-objs				:= cpu_input_boost.o
 endif
 
 obj-$(CONFIG_CPUFREQ_DT)		+= cpufreq-dt.o
+obj-$(CONFIG_FINGERPRINT_BOOST)		+= fp-boost.o
 
 ##################################################################################
 # x86 drivers.
