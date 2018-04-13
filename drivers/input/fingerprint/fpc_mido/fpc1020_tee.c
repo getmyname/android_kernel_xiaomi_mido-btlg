@@ -54,7 +54,7 @@
 #define FPC_TTW_HOLD_TIME 1000
 #define NUM_PARAMS_REG_ENABLE_SET 2
 
-static const char * const pctl_names[] = {
+static const char * pctl_names[] = {
 	"fpc1020_spi_active",
 	"fpc1020_reset_reset",
 	"fpc1020_reset_active",
