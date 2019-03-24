@@ -239,10 +239,7 @@ void kcal_ext_apply_values(int red, int green, int blue)
 	lut_data->green = green;
 	lut_data->blue = blue;
 
-	if (mdss_mdp_kcal_is_panel_on())
-		mdss_mdp_kcal_update_pcc(lut_data);
-	else
-		lut_data->queue_changes = true;
+	mdss_mdp_kcal_update_pcc(lut_data);
 }
 
 int kcal_ext_get_value(int color)
